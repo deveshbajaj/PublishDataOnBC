@@ -36,18 +36,6 @@ Usage
 
 
 
-Installation
-
-    pip install https://github.com/dasmithii/stone
-
-      [or]
-
-    git clone 
-    https://github.com/dasmithii/stone
-    cd stone
-    python setup.py install
-
-
 
 Testing
 
