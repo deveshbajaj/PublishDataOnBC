@@ -1,0 +1,57 @@
+Overview
+
+    This is a tool for publishing to and reading from the Bitcoin
+    blockchain. For fees proportional to content length, it will
+    render your inputs "written in stone" and addressable by
+    transaction ID.
+
+    Per rule of Bitcoin protocol, these are writes to immutable 
+    history - modifiable only by majority mining power. In just 
+    minutes, they propagate to thousands of nodes around the 
+    world, and for all practical purposes, mirror the integrity
+    of Bitcoin as a whole.
+
+    Note that anonymity is not guaranteed. Tor may be used to 
+    proxy read and write activity. But still, transactions can be
+    traced backwards to identifying actions of your past. See
+    https://en.bitcoin.it/wiki/Anonymity for more information on 
+    that point.
+
+
+
+Usage
+
+    Start bitcoind if you plan to write data. Reads default to 
+    blockchain.info's API, but utilize the running node if one
+    exists. But a local node is required only for writes.
+
+    Reading and writing:
+     >  stone write --data="hello, world!"
+     >  stone write --path="example.txt"
+     >  stone read <txid>
+
+    Cost estimation:
+     >  stone price --data="hello, world!"
+     >  stone price --path="example.txt"
+
+
+
+Installation
+
+    pip install https://github.com/dasmithii/stone
+
+      [or]
+
+    git clone 
+    https://github.com/dasmithii/stone
+    cd stone
+    python setup.py install
+
+
+
+Testing
+
+     >  bitcoind -testnet -daemon
+     >  python -m unittest discover
+
+
